@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Результаты</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    >
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>Big Data Analyzer</header>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Модель обучена!</h1>
+        <p class="text-center fs-5"><strong>MSE:</strong> {{ mse }}</p>
+
+        <h3 class="text-center mt-5">График предсказаний</h3>
+        <div class="text-center">
+            <img src="/{{ plot_url }}" class="img-fluid rounded shadow">
+        </div>
+    </div>
+</body>
+</html>
