@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kube
+  template:
+    metadata:
+      labels:
+        app: kube
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "3000"
+    spec:
+      containers:
+      - name: kube
+        image: kube:1.0
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
